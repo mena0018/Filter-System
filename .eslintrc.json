@@ -1,0 +1,10 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended"],
+  "rules": {
+    "react/jsx-key": "off",
+    "prefer-const": "error",
+    "react/no-unescaped-entities": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "@next/next/no-html-link-for-pages": "off"
+  }
+}
