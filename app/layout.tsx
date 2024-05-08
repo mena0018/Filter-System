@@ -12,8 +12,11 @@ export const metadata: Metadata = SiteConfig;
 
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className={cn('font-sans antialiased', fontSans.className)}>
+    <html suppressHydrationWarning lang="en" className="h-full">
+      <body
+        suppressHydrationWarning
+        className={cn('font-sans antialiased', fontSans.className)}
+      >
         <Providers>
           <aside className="absolute right-5 top-5">
             <ModeToggle />
