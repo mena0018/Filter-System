@@ -18,7 +18,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
         className={cn('font-sans antialiased', fontSans.className)}
       >
         <Providers>
-          <aside className="absolute right-5 top-5">
+          <aside className="absolute right-2 top-5 md:right-5">
             <ModeToggle />
           </aside>
           {children}
