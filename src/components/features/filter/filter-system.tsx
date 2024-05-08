@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 export const FilterSystem = () => {
   const [filter, setFilter] = useState({
@@ -24,25 +25,25 @@ export const FilterSystem = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           {SORT_OPTIONS.map((option) => (
-            <button
-              className={cn(
-                'text-left w-full block px-4 py-2 text-sm hover:bg-gray-200',
-                { 'bg-gray-100': option.value === filter.sort }
-              )}
+            <Button
+              variant="outline"
+              className={cn('w-full block text-left border-0', {
+                'bg-accent/50': option.value === filter.sort,
+              })}
               key={option.name}
               onClick={() =>
                 setFilter((prev) => ({ ...prev, sort: option.value }))
               }
             >
               {option.name}
-            </button>
+            </Button>
           ))}
         </DropdownMenuContent>
       </DropdownMenu>
 
-      <button className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden">
+      <Button className="-m-2 ml-4 p-2 sm:ml-6 lg:hidden">
         <Filter className="size-5" />
-      </button>
+      </Button>
     </div>
   );
 };
