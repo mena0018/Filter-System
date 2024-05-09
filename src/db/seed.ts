@@ -1,22 +1,11 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '@/db/prisma';
 import { generateProducts } from '@/lib/helper';
-
-const prisma = new PrismaClient();
 
 const seed = async () => {
   const products = generateProducts();
 
   for (const product of products) {
-    await prisma.product.create({
-      data: {
-        id: product.id,
-        name: product.name,
-        size: product.size,
-        price: product.price,
-        color: product.color,
-        imageId: product.imageId,
-      },
-    });
+    await prisma.product.create({ data: product });
   }
 };
 

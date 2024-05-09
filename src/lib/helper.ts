@@ -1,13 +1,7 @@
-import { SIZES, COLORS } from '@/components/features/filter/filter-data';
+import { Product } from '@/app/_product/product-data';
 
-type Product = {
-  id: string;
-  name: string;
-  price: number;
-  imageId: string;
-  size: 'S' | 'M' | 'L';
-  color: 'white' | 'beige' | 'blue' | 'green' | 'purple';
-};
+const SIZES = ['S', 'M', 'L'] as const;
+const COLORS = ['white', 'beige', 'blue', 'green', 'purple'] as const;
 
 const getRandomPrice = () => {
   const PRICES = [9.99, 19.99, 29.99, 39.99, 49.99];
@@ -20,7 +14,7 @@ const getName = (color: string, iterator: number) => {
 };
 
 export const generateProducts = () => {
-  const products: Array<Product> = [];
+  const products: Product[] = [];
 
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < COLORS.length; j++) {
