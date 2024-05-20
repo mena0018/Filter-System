@@ -10,7 +10,7 @@
     "lint:fix": "next lint --fix",
     "prettier": "prettier --check \"**/*.{ts,tsx,mdx,css}\"",
     "prettier:fix": "prettier --write \"**/*.{ts,tsx,mdx,css}\"",
-    "clean": "pnpm run lint:fix && pnpm run prettier:fix",
+    "format": "pnpm run lint:fix && pnpm run prettier:fix",
     "seed": "tsx ./src/db/seed.ts",
     "prepare": "husky"
   },
@@ -22,6 +22,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@t3-oss/env-nextjs": "^0.9.2",
     "@tanstack/react-query": "^5.35.1",
+    "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.378.0",
