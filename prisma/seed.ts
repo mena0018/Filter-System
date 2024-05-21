@@ -1,4 +1,4 @@
-import prisma from '@/db/prisma';
+import prisma from '@/prisma/singleton';
 import { generateProducts } from '@/lib/helper';
 
 const seed = async () => {

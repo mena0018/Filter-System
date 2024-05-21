@@ -1,6 +1,7 @@
-import prisma from '@/db/prisma';
+import prisma from '@/prisma/singleton';
+import { NextResponse } from 'next/server';
 
-export const POST = async () => {
+export const GET = async () => {
   const products = await prisma.product.findMany();
-  return new Response(JSON.stringify(products));
+  return NextResponse.json(products);
 };

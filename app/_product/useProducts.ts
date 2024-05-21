@@ -14,7 +14,7 @@ export function useProducts() {
     isError,
   } = useQuery({
     queryKey: ['products', sort],
-    queryFn: () => getProducts(sort),
+    queryFn: () => getProducts(),
   });
 
   return { products, isPending, isError };

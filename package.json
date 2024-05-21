@@ -1,6 +1,6 @@
 {
-  "name": "next-setup",
-  "version": "0.1.0",
+  "name": "e-commerce-filter",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,8 +11,9 @@
     "prettier": "prettier --check \"**/*.{ts,tsx,mdx,css}\"",
     "prettier:fix": "prettier --write \"**/*.{ts,tsx,mdx,css}\"",
     "format": "pnpm run lint:fix && pnpm run prettier:fix",
-    "seed": "tsx ./src/db/seed.ts",
-    "prepare": "husky"
+    "seed": "tsx ./prisma/seed.ts",
+    "prepare": "husky",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.4.0",
