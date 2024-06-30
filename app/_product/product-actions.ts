@@ -3,8 +3,9 @@
 import axios from 'axios';
 import { API_BASE_URL } from '@/lib/site-config';
 import { Product } from '@/app/_product/product-data';
+import { ProductFilterState } from '@/app/_product/product-validator';
 
-export const getProducts = async () => {
-  const response = await axios.get<Product[]>(`${API_BASE_URL}/api/products`);
+export const getProducts = async (filter: ProductFilterState) => {
+  const response = await axios.post<Product[]>(`${API_BASE_URL}/api/products`, { filter });
   return response.data;
 };

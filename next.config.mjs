@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/?category=t-shirts',
+        destination: '/?category=shirt',
       },
     ];
   },

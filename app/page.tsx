@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { ProductGrid } from '@/components/features/product/product-grid';
+import { FilterCategory } from '@/components/features/filter/filter-category';
 import { FilterDropdown } from '@/components/features/filter/filter-dropdown';
 import { ProductsSkeleton } from '@/components/features/product/product-skeleton';
 
@@ -13,6 +14,7 @@ export default async function HomePage() {
 
       <main className="pb-24 pt-6">
         <article className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+          <FilterCategory />
           <Suspense fallback={<ProductsSkeleton />}>
             <ProductGrid />
           </Suspense>
