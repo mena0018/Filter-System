@@ -12,7 +12,7 @@ export const ProductGrid = () => {
     return <ProductsSkeleton />;
   }
 
-  if (isError || !products) {
+  if (isError || !products || !products.length) {
     return <ProductEmptyState />;
   }
 

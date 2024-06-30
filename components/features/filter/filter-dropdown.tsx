@@ -1,11 +1,10 @@
 'use client';
 
-import { useQueryState } from 'nuqs';
-import { ChevronDownIcon, Filter } from 'lucide-react';
-import { SORT_OPTIONS } from '@/app/_filter/filter-data';
-
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { ChevronDownIcon, Filter } from 'lucide-react';
+import { useQueryParams } from '@/hooks/useQueryParams';
+import { SORT_OPTIONS, FilterURL } from '@/app/_filter/filter-data';
 import {
   DropdownMenu,
   DropdownMenuItem,
@@ -14,7 +13,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export const FilterDropdown = () => {
-  const [sort, setSort] = useQueryState('sort', { defaultValue: '' });
+  const { getQuery, setOrDeleteQuery } = useQueryParams();
 
   return (
     <DropdownMenu>
@@ -29,8 +28,8 @@ export const FilterDropdown = () => {
         {SORT_OPTIONS.map((option) => (
           <DropdownMenuItem
             key={option.name}
-            onClick={() => setSort(option.value)}
-            className={cn({ 'bg-accent/50': option.value === sort })}
+            onClick={() => setOrDeleteQuery(FilterURL.Sort, option.value)}
+            className={cn({ 'bg-accent/50': option.value === getQuery(FilterURL.Sort) })}
           >
             {option.name}
           </DropdownMenuItem>

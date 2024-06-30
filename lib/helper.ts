@@ -1,7 +1,4 @@
-import { Product } from '@/app/_product/product-data';
-
-const SIZES = ['S', 'M', 'L'] as const;
-const COLORS = ['white', 'beige', 'blue', 'green', 'purple'] as const;
+import { AVAILABLE_COLORS, AVAILABLE_SIZES, Product } from '@/app/_product/product-data';
 
 const getRandomPrice = () => {
   const PRICES = [9.99, 19.99, 29.99, 39.99, 49.99];
@@ -17,10 +14,10 @@ export const generateProducts = () => {
   const products: Product[] = [];
 
   for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < COLORS.length; j++) {
-      for (let k = 0; k < SIZES.length; k++) {
-        const size = SIZES[k];
-        const color = COLORS[j];
+    for (let j = 0; j < AVAILABLE_COLORS.length; j++) {
+      for (let k = 0; k < AVAILABLE_SIZES.length; k++) {
+        const size = AVAILABLE_SIZES[k];
+        const color = AVAILABLE_COLORS[j];
         products.push({
           size,
           color,
