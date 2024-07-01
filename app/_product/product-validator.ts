@@ -16,7 +16,11 @@ export const ProductFilterValidator = z.object({
 export type ProductFilterState = z.infer<typeof ProductFilterValidator>;
 type ProductFilterSource = Record<keyof ProductFilterState, string | null>;
 
-export const toBodyRequest = (filter: ProductFilterSource): ProductFilterState => {
+export type ValidatedProductFilterState =
+  | { success: false }
+  | { success: true; data: ProductFilterState };
+
+export const toBodyRequest = (filter: ProductFilterSource): ValidatedProductFilterState => {
   const bodyRequest = {
     sort: filter.sort ?? AVAILABLE_SORT[0],
     category: filter.category ?? AVAILABLE_CATEGORIES[0],
@@ -24,5 +28,11 @@ export const toBodyRequest = (filter: ProductFilterSource): ProductFilterState =
     color: filter.color ? filter.color.split(',') : AVAILABLE_COLORS,
   };
 
-  return ProductFilterValidator.parse(bodyRequest);
+  const result = ProductFilterValidator.safeParse(bodyRequest);
+
+  if (!result.success) {
+    return { success: false };
+  }
+
+  return { success: true, data: result.data };
 };
