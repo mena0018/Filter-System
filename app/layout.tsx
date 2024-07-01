@@ -6,7 +6,6 @@ import { Inter as FontSans } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Providers } from '@/app/providers';
 import { SiteConfig } from '@/lib/site-config';
-import { ThemeToggle } from '@/components/features/theme/theme-toggle';
 
 const fontSans = FontSans({ subsets: ['latin'] });
 export const metadata: Metadata = SiteConfig;
@@ -15,10 +14,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html suppressHydrationWarning lang="en" className="h-full">
       <body suppressHydrationWarning className={cn('font-sans antialiased', fontSans.className)}>
-        <Providers>
-          <ThemeToggle />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
