@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils';
 import { Accordion } from '@/components/ui/accordion';
 import { useQueryParams } from '@/hooks/useQueryParams';
+import { FilterSize } from '@/components/features/filter/filter-size';
 import { FilterColor } from '@/components/features/filter/filter-color';
 import { FilterURL, CATEGORIES_OPTIONS } from '@/app/_filter/filter-data';
 
@@ -27,6 +28,7 @@ export const FilterCategory = () => {
       </ul>
       <Accordion type="multiple" className="animate-none">
         <FilterColor />
+        <FilterSize />
       </Accordion>
     </div>
   );
