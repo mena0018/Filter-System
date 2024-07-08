@@ -19,6 +19,12 @@ export const COLOR_OPTIONS = [
   { value: 'purple', label: 'Purple' },
 ] as const;
 
+export const SIZE_OPTIONS = [
+  { value: 'S', label: 'S' },
+  { value: 'M', label: 'M' },
+  { value: 'L', label: 'L' },
+] as const;
+
 export enum FilterURL {
   Sort = 'sort',
   Size = 'size',
