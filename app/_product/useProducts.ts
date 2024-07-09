@@ -15,8 +15,10 @@ export function useProducts() {
   const sort = getQuery(FilterURL.Sort);
   const size = getQuery(FilterURL.Size);
   const color = getQuery(FilterURL.Color);
+  const price = getQuery(FilterURL.Price);
   const category = getQuery(FilterURL.Category);
-  const bodyRequest = toBodyRequest({ sort, size, color, category });
+
+  const bodyRequest = toBodyRequest({ sort, size, color, price, category });
 
   const {
     data: products,
