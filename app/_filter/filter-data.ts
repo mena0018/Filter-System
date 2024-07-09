@@ -25,9 +25,16 @@ export const SIZE_OPTIONS = [
   { value: 'L', label: 'L' },
 ] as const;
 
+export const PRICE_OPTIONS = [
+  { value: [0, 10], label: 'Under 10€' },
+  { value: [0, 30], label: 'Under 30€' },
+  { value: [0, 100], label: 'Any price' },
+] as const;
+
 export enum FilterURL {
   Sort = 'sort',
   Size = 'size',
   Color = 'color',
+  Price = 'price',
   Category = 'category',
 }
