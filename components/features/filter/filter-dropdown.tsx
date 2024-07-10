@@ -1,8 +1,8 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { ChevronDownIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ChevronDownIcon, Filter } from 'lucide-react';
 import { useQueryParams } from '@/hooks/useQueryParams';
 import { SORT_OPTIONS, FilterURL } from '@/app/_filter/filter-data';
 import {
@@ -20,7 +20,7 @@ export const FilterDropdown = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost">
           Sort
-          <ChevronDownIcon className="size-5" />
+          <ChevronDownIcon className="ml-[4px] size-5" />
         </Button>
       </DropdownMenuTrigger>
 
@@ -35,10 +35,6 @@ export const FilterDropdown = () => {
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
-
-      <Button className="-m-2 ml-4 p-2 sm:ml-6 lg:hidden">
-        <Filter className="size-5" />
-      </Button>
     </DropdownMenu>
   );
 };
