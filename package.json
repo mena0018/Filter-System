@@ -13,7 +13,8 @@
     "format": "pnpm run lint:fix && pnpm run prettier:fix",
     "seed": "tsx ./prisma/seed.ts",
     "prepare": "husky",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build"
+    "postinstall": "prisma generate",
+    "vercel-build": "next build"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.4.0",
