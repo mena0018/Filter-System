@@ -3,6 +3,7 @@
 - 🚀 Next
 - 🎨 Tailwind
 - 📊 Prisma
+- 🧪 Vitest
 
 #### Setup
 
