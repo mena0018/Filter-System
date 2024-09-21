@@ -1,11 +1,16 @@
-import { AVAILABLE_COLORS, AVAILABLE_SIZES, Product } from '@/app/_product/product-data';
+import {
+  Product,
+  AVAILABLE_SIZES,
+  AVAILABLE_PRICE,
+  AVAILABLE_COLORS,
+  GENERATED_PRODUCT_NUMBER,
+} from '@/app/_product/product-data';
 
-const getRandomPrice = () => {
-  const PRICES = [9.99, 19.99, 29.99, 39.99, 49.99];
-  return PRICES[Math.floor(Math.random() * PRICES.length)];
+export const getRandomPrice = () => {
+  return AVAILABLE_PRICE[Math.floor(Math.random() * AVAILABLE_PRICE.length)];
 };
 
-const getName = (color: string, iterator: number) => {
+export const getName = (color: string, iterator: number) => {
   const productColor = color.slice(0, 1).toUpperCase() + color.slice(1);
   return `${productColor} shirt ${iterator + 1}`;
 };
@@ -13,7 +18,7 @@ const getName = (color: string, iterator: number) => {
 export const generateProducts = () => {
   const products: Product[] = [];
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < GENERATED_PRODUCT_NUMBER; i++) {
     for (let j = 0; j < AVAILABLE_COLORS.length; j++) {
       for (let k = 0; k < AVAILABLE_SIZES.length; k++) {
         const size = AVAILABLE_SIZES[k];

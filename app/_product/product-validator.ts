@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import {
+  PRICE_FILTER,
   AVAILABLE_SORT,
   AVAILABLE_SIZES,
-  AVAILABLE_PRICE,
   AVAILABLE_COLORS,
   AVAILABLE_CATEGORIES,
 } from '@/app/_product/product-data';
@@ -26,7 +26,7 @@ export const toBodyRequest = (filter: ProductFilterSource): ValidatedProductFilt
   const bodyRequest = {
     sort: filter.sort ?? AVAILABLE_SORT[0],
     category: filter.category ?? AVAILABLE_CATEGORIES[0],
-    price: filter.price ? JSON.parse(filter.price) : AVAILABLE_PRICE[0],
+    price: filter.price ? JSON.parse(filter.price) : PRICE_FILTER[0],
     size: filter.size ? filter.size.split(',') : AVAILABLE_SIZES,
     color: filter.color ? filter.color.split(',') : AVAILABLE_COLORS,
   };
