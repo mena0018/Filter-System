@@ -1,7 +1,7 @@
 'use client';
 
-import { useURLParams } from '@/hooks/useURLParams';
 import { FilterURL } from '@/app/_filter/filter-data';
+import { useURLParams } from '@/hooks/useURLParams';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export function useQueryParams() {

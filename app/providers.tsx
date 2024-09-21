@@ -2,9 +2,9 @@
 
 import { Toaster } from 'sonner';
 import { PropsWithChildren, Suspense } from 'react';
-import { ThemeToggle } from '@/components/features/theme/theme-toggle';
+import { ThemeToggle } from '@/features/theme/theme-toggle';
+import { ThemeProvider } from '@/features/theme/theme-provider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ThemeProvider } from '@/components/features/theme/theme-provider';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 0 } },

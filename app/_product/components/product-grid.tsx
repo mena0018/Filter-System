@@ -1,9 +1,9 @@
 'use client';
 
 import { useProducts } from '@/app/_product/useProducts';
-import { ProductItem } from '@/components/features/product/product-item';
-import { ProductsSkeleton } from '@/components/features/product/product-skeleton';
-import { ProductEmptyState } from '@/components/features/product/product-empty-state';
+import { ProductItem } from '@/app/_product/components/product-item';
+import { ProductsSkeleton } from '@/app/_product/components/product-skeleton';
+import { ProductEmptyState } from '@/app/_product/components/product-empty-state';
 
 export const ProductGrid = () => {
   const { products, isPending, isError } = useProducts();

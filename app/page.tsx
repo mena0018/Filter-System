@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
-import { ProductGrid } from '@/components/features/product/product-grid';
-import { FilterCategory } from '@/components/features/filter/filter-category';
-import { FilterDropdown } from '@/components/features/filter/filter-dropdown';
-import { ProductsSkeleton } from '@/components/features/product/product-skeleton';
+import { ProductGrid } from '@/app/_product/components/product-grid';
+import { FilterCategory } from '@/app/_filter/components/filter-category';
+import { FilterDropdown } from '@/app/_filter/components/filter-dropdown';
+import { ProductsSkeleton } from '@/app/_product/components/product-skeleton';
 
 export default async function HomePage() {
   return (

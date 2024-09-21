@@ -5,10 +5,10 @@ import { Inter as FontSans } from 'next/font/google';
 
 import { cn } from '@/lib/utils';
 import { Providers } from '@/app/providers';
-import { SiteConfig } from '@/lib/site-config';
+import { baseMetadata } from '@/lib/site-config';
 
 const fontSans = FontSans({ subsets: ['latin'] });
-export const metadata: Metadata = SiteConfig;
+export const metadata: Metadata = baseMetadata;
 
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
