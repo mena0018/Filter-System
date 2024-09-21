@@ -1,7 +1,7 @@
 import { env } from '@/lib/env';
 import type { Metadata } from 'next';
 
-export const SiteConfig: Metadata = {
+export const baseMetadata: Metadata = {
   title: 'Filter-System',
   description: 'Full Stack filter system made with Next (app router) and Tailwind.',
 };
